@@ -8,8 +8,14 @@ books = [
 ]
 
 def book_list(request):
+    """
+    shows the list of books HttpResponse format
+    """
     result = "<br>".join([f"{b['title']} by {b['author']} " for b in books])
     return HttpResponse(result)
 
 def book_json(request):
+    """
+    shows the list of books Json format
+    """
     return JsonResponse(books, safe=False)
